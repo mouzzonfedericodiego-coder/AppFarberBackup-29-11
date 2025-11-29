@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Farber Panel Pro</title>
+
+  <!-- CSS PRINCIPAL -->
+  <link rel="stylesheet" href="app.css" />
+</head>
+<body>
+
+  <!-- LOADER GLOBAL FARBER -->
+  <div id="appLoader" class="loader">
+    <div class="loader__inner">
+      <div class="loader__logo">FARBER</div>
+
+      <div class="loader__bars">
+        <div class="loader__bar loader__bar--1"></div>
+        <div class="loader__bar loader__bar--2"></div>
+      </div>
+
+      <p class="loader__text">Cargando panel Farber...</p>
+    </div>
+  </div>
+
+  <!-- LAYOUT ROOT (TODO EL SISTEMA SE RENDERIZA AQUÍ) -->
+  <div class="layout" id="layoutRoot">
+
+    <!-- SIDEBAR FIJO -->
+    <aside class="sidebar">
+      <div class="sidebar__logo">
+        <span class="sidebar__logo-mark">F</span>
+        <span class="sidebar__logo-text">FARBER PANEL</span>
+      </div>
+
+      <nav class="sidebar__nav">
+        <a href="#" class="sidebar__link js-nav" data-section="dashboard">🏠 Dashboard</a>
+        <a href="#" class="sidebar__link js-nav" data-section="clients">👥 Clientes</a>
+        <a href="#" class="sidebar__link js-nav" data-section="products">🛒 Productos</a>
+        <a href="#" class="sidebar__link js-nav" data-section="budgets">📄 Presupuestos</a>
+        <a href="#" class="sidebar__link js-nav" data-section="orders">📦 Pedidos</a>
+        <a href="#" class="sidebar__link js-nav" data-section="reception">✅ Recepción</a>
+        <a href="#" class="sidebar__link js-nav" data-section="history">📚 Historial</a>
+        <a href="#" class="sidebar__link js-nav" data-section="platform">🧰 Plataforma</a>
+        <a href="#" class="sidebar__link js-nav" data-section="config">⚙️ Configuración</a>
+      </nav>
+    </aside>
+
+    <!-- CONTENIDO DINÁMIO -->
+    <main id="mainContent" class="main">
+      <!-- Aquí el JS inyectará cada módulo -->
+    </main>
+  </div>
+
+  <!-- JS DEL SISTEMA SPA -->
+  <script src="app.js"></script>
+
+  <!-- MÓDULOS SPA -->
+  <script src="js/core.js"></script>
+  <script src="js/ui.js"></script>
+  <script src="js/products.js"></script>
+  <script src="js/clients.js"></script>
+  <script src="js/budgets.js"></script>
+  <script src="js/budgetHeader.js"></script>
+  <script src="js/budgetExtra.js"></script>
+  <script src="js/budgetSubtotals.js"></script>
+  <script src="js/orders.js"></script>
+  <script src="js/reception.js"></script>
+  <script src="js/history.js"></script>
+  <script src="js/customItems.js"></script>
+  <script src="js/exports.js"></script>
+  <script src="js/config.js"></script>
+
+</body>
+</html>

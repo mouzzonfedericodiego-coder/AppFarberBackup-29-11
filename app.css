@@ -1,0 +1,332 @@
+/* =========================================================
+   FARBER PANEL PRO - ESTILOS PRINCIPALES
+   SPA / Sidebar / Loader / Layout / Cards / Inputs / Tablas
+   ========================================================= */
+
+/* ---------- RESET GENERAL ---------- */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  background: #0d1117;
+  color: #e2e8f0;
+  font-family: "Inter", sans-serif;
+  overflow: hidden;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+/* =============================== */
+/*        LOADER FARBER PRO        */
+/* =============================== */
+
+.loader {
+  position: fixed;
+  inset: 0;
+  background: #0a0c10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 99999;
+  opacity: 1;
+  pointer-events: auto;
+  transition: opacity 0.8s ease-in-out;
+}
+
+.loader--hide {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.loader__inner {
+  text-align: center;
+  animation: fadeIn 1s ease-out forwards;
+}
+
+.loader__logo {
+  font-size: 4.5rem;
+  font-weight: 900;
+  color: #e30613;
+  letter-spacing: 0.3em;
+  text-shadow: 0 0 25px rgba(227, 6, 19, 0.7);
+  margin-bottom: 2rem;
+}
+
+/* Barras */
+
+.loader__bars {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  margin-bottom: 1rem;
+}
+
+.loader__bar {
+  width: 160px;
+  height: 5px;
+  background: rgba(227, 6, 19, 0.25);
+  border-radius: 10px;
+  overflow: hidden;
+  position: relative;
+}
+
+.loader__bar::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -50%;
+  width: 50%;
+  height: 100%;
+  background: #e30613;
+  animation: loaderSlide 1.4s infinite ease-in-out;
+}
+
+.loader__bar--2::after {
+  animation-delay: 0.5s;
+}
+
+.loader__text {
+  color: #e5e7eb;
+  margin-top: 1rem;
+  opacity: 0.85;
+}
+
+@keyframes loaderSlide {
+  0% { left: -50%; }
+  50% { left: 110%; }
+  100% { left: -50%; }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* =============================== */
+/*             LAYOUT              */
+/* =============================== */
+
+.layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  height: 100%;
+  overflow: hidden;
+}
+
+/* =============================== */
+/*             SIDEBAR             */
+/* =============================== */
+
+.sidebar {
+  background: #11151c;
+  border-right: 1px solid rgba(255,255,255,0.05);
+  padding: 1.5rem 0;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.sidebar__logo {
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.sidebar__logo-mark {
+  font-size: 2.5rem;
+  color: #e30613;
+  font-weight: 900;
+}
+
+.sidebar__logo-text {
+  display: block;
+  font-size: 1rem;
+  letter-spacing: 0.1em;
+  opacity: 0.7;
+}
+
+.sidebar__nav {
+  display: flex;
+  flex-direction: column;
+  gap: 0.1rem;
+}
+
+.sidebar__link {
+  padding: 0.75rem 1.5rem;
+  color: #cbd5e1;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  opacity: 0.85;
+  transition: 0.2s ease;
+  border-left: 3px solid transparent;
+}
+
+.sidebar__link:hover {
+  background: rgba(255,255,255,0.05);
+  opacity: 1;
+}
+
+.sidebar__link.active {
+  background: rgba(227, 6, 19, 0.17);
+  color: #fff;
+  border-left: 3px solid #e30613;
+  opacity: 1;
+}
+
+.sidebar__icon {
+  font-size: 1.2rem;
+}
+
+/* =============================== */
+/*            MAIN AREA            */
+/* =============================== */
+
+.main {
+  padding: 2rem;
+  overflow-y: auto;
+  background: #0d1117;
+}
+
+/* =============================== */
+/*            TITULARES            */
+/* =============================== */
+
+.section-title {
+  font-size: 2rem;
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+  color: #fff;
+}
+
+/* =============================== */
+/*              CARDS              */
+/* =============================== */
+
+.card {
+  background: #161b22;
+  border-radius: 12px;
+  padding: 1.3rem 1.6rem;
+  box-shadow: 0 0 20px rgba(0,0,0,0.35);
+  margin-bottom: 1rem;
+}
+
+.card--clickable {
+  cursor: pointer;
+  transition: 0.2s ease;
+}
+
+.card--clickable:hover {
+  background: #1c212a;
+}
+
+/* =============================== */
+/*              INPUTS             */
+/* =============================== */
+
+input, select, textarea {
+  background: #1b222c;
+  border: 1px solid rgba(255,255,255,0.1);
+  color: #e2e8f0;
+  padding: 0.6rem 0.8rem;
+  border-radius: 6px;
+  width: 100%;
+}
+
+input:focus, select:focus, textarea:focus {
+  outline: 2px solid #e30613;
+}
+
+/* =============================== */
+/*              BOTONES            */
+/* =============================== */
+
+.btn {
+  padding: 0.6rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  border: none;
+  transition: 0.2s ease;
+  font-weight: 600;
+}
+
+.btn-primary {
+  background: #e30613;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background: #c10510;
+}
+
+.btn-light {
+  background: #2d333c;
+}
+
+.btn-light:hover {
+  background: #3a414c;
+}
+
+/* =============================== */
+/*              TABLAS             */
+/* =============================== */
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 0.8rem;
+  color: #e5e7eb;
+}
+
+.table th {
+  background: #161b22;
+  padding: 0.7rem;
+  text-align: left;
+  font-weight: 600;
+}
+
+.table td {
+  padding: 0.6rem;
+  border-top: 1px solid rgba(255,255,255,0.05);
+}
+
+.table tr:hover td {
+  background: rgba(255,255,255,0.05);
+}
+
+/* =============================== */
+/*             MODALES             */
+/* =============================== */
+
+.modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9000;
+}
+
+.modal.active {
+  display: flex;
+}
+
+.modal__content {
+  background: #161b22;
+  padding: 1.8rem;
+  border-radius: 12px;
+  width: 480px;
+  max-width: 95%;
+}
+
+/* =========================================================
+   FIN DEL ARCHIVO app.css COMPLETO
+   ========================================================= */
